@@ -185,7 +185,44 @@ main .next-button-decorated button{
 
 
 /* Desktop Page 1440 px light */
+@media (min-width: 1440px) {
+    header nav{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
 
+    header nav .moon-menu .toggle-on-off{
+        display: none;
+    } 
+    header nav .moon-menu{
+        display: flex;
+        gap: 80px;
+    }
+
+    header nav .moon-menu .dark-moon{
+        order: 2;
+    }
+    #menu{
+        order: 1;
+        display: flex;
+    }
+
+    #menu ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 80px;
+    }
+    #menu ul li a{
+        text-decoration: none;
+    }
+
+    
+}
 /* Javier Start */
 
 
