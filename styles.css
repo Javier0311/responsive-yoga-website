@@ -748,6 +748,13 @@ body.dark-mode footer {
         transform: rotate(8deg);
     }
     
+    body.dark-mode .photo-top-left,
+    body.dark-mode .photo-top-right,
+    body.dark-mode .photo-bottom-left,
+    body.dark-mode .photo-bottom-right {
+        border-color: #372A51;
+    }
+    
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -755,55 +762,75 @@ body.dark-mode footer {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 40px 0 30px;
+        padding: 60px 0 40px;
     }
     
     .hero-container {
         padding: 0 20px;
         gap: 40px;
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .hero h1 {
-        font-size: 36px;
+        font-size: 32px;
+        line-height: 110%;
     }
     
     .hero p {
         font-size: 14px;
         max-width: 100%;
+        line-height: 150%;
+        margin-bottom: 30px;
     }
     
     .hero-images {
-        height: 350px;
+        height: auto;
+        min-height: 450px;
+        position: relative;
+        width: 100%;
     }
     
     .image-top,
     .image-bottom {
-        width: 280px;
+        width: 85%;
+        max-width: 300px;
         height: 200px;
     }
     
     .image-top {
-        right: 10px;
-        top: 20px;
+        right: auto;
+        left: 5%;
+        top: 0;
     }
     
     .image-bottom {
-        left: 10px;
-        bottom: 20px;
+        left: auto;
+        right: 5%;
+        bottom: 0;
     }
     
     .badge-top,
     .badge-bottom {
-        font-size: 12px;
-        padding: 8px 14px;
+        font-size: 11px;
+        padding: 8px 16px;
+        border-radius: 12px;
     }
     
     .badge-top {
-        right: -30px;
+        right: 5%;
+        top: -10px;
     }
     
     .badge-bottom {
-        left: -30px;
+        left: 5%;
+        bottom: -10px;
     }
     
     .cta-button {
@@ -845,53 +872,63 @@ body.dark-mode footer {
     
     .instagram-photos {
         position: relative;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
         margin-top: 30px;
-        min-height: 500px;
+        min-height: auto;
+        padding: 0 20px;
     }
     
-    .photo-top-left {
-        position: absolute;
-        top: 267px;
-        left: 40px;
-        width: 296px;
-        height: 250px;
-        transform: rotate(-5deg);
-        border: 5px solid #E5D9FD;
-    }
-    
+    .photo-top-left,
     .photo-top-right {
-        position: absolute;
-        top: 100px;
-        right: 20px;
-        width: 296px;
-        height: 250px;
-        transform: rotate(5deg);
+        position: static;
+        width: 48%;
+        max-width: 150px;
+        height: 220px;
+        transform: rotate(0deg);
         border: 5px solid #E5D9FD;
+        margin: 0;
+        border-radius: 120px;
     }
     
-    .photo-bottom-left {
-        position: absolute;
-        top: 450px;
-        left: 30px;
-        width: 296px;
-        height: 250px;
-        transform: rotate(-8deg);
-        border: 5px solid #E5D9FD;
-    }
-    
-    .photo-bottom-right {
-        position: absolute;
-        top: 550px;
-        right: 15px;
-        width: 296px;
-        height: 250px;
-        transform: rotate(8deg);
-        border: 5px solid #E5D9FD;
+    .instagram-photos > div:nth-child(1),
+    .instagram-photos > div:nth-child(2) {
+        display: inline-block;
     }
     
     .instagram-photos {
-        min-height: 850px;
+        display: block;
+        text-align: center;
+    }
+    
+    .photo-top-left {
+        margin-right: 10px;
+    }
+    
+    .photo-top-right {
+        margin-left: 10px;
+    }
+    
+    .photo-bottom-left,
+    .photo-bottom-right {
+        position: static;
+        width: 90%;
+        max-width: 320px;
+        height: 160px;
+        transform: rotate(0deg);
+        border: 5px solid #E5D9FD;
+        border-radius: 120px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    body.dark-mode .photo-top-left,
+    body.dark-mode .photo-top-right,
+    body.dark-mode .photo-bottom-left,
+    body.dark-mode .photo-bottom-right {
+        border-color: #372A51;
     }
     
     .instagram-button {
@@ -929,6 +966,8 @@ body.dark-mode footer {
     }
     
     .newsletter-form button {
+        position: static;
+        transform: none;
         width: 100%;
         height: 56px;
     }
@@ -939,8 +978,20 @@ body.dark-mode footer {
     
     .footer-content {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
         gap: 30px;
+    }
+    
+    .footer-col-office {
+        text-align: left;
+    }
+    
+    .footer-col-office p {
+        text-align: left;
+    }
+    
+    .footer-col-contact {
+        text-align: left;
     }
     
     .footer-bottom {
