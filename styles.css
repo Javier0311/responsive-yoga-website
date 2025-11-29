@@ -94,7 +94,7 @@ body.dark-mode .theme-toggle .moon {
 }
 
 body.dark-mode .hero h1 {
-    color: #ffffff;
+    color: #D1C0F1;
 }
 
 .hero p {
@@ -113,16 +113,17 @@ body.dark-mode .hero p {
 }
 
 .cta-button {
-    background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+    background: linear-gradient(135deg, #FF52AF 0%, #9F53FF 100%);
     color: white;
     border: none;
     padding: 16px 36px;
-    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
     border-radius: 50px;
     cursor: pointer;
-    font-weight: 400;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 16px rgba(233, 30, 99, 0.3);
+    box-shadow: 0 8px 24px rgba(255, 82, 175, 0.4);
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -130,11 +131,11 @@ body.dark-mode .hero p {
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(233, 30, 99, 0.4);
+    box-shadow: 0 12px 32px rgba(255, 82, 175, 0.5);
 }
 
 .cta-button span {
-    font-size: 1.2rem;
+    font-size: 20px;
 }
 
 /* Hero Images */
@@ -151,7 +152,7 @@ body.dark-mode .hero p {
 .image-top,
 .image-bottom {
     position: absolute;
-    width: 500px;
+    width: 475px;
     height: 300px;
     border-radius: 192px;
     border: 10px solid #f0e8f5;
@@ -168,14 +169,21 @@ body.dark-mode .hero p {
 body.dark-mode .image-top {
     background: linear-gradient(135deg, #2d1b4e, #1a0f2e);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    border-color: #14092A;
 }
 
 .image-bottom {
     background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-    bottom: 50px;
+    bottom: 0;
     right: 0;
     z-index: 1;
     overflow: visible;
+}
+
+body.dark-mode .image-bottom {
+    background: linear-gradient(135deg, #3d2b5f, #2d1b4e);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    border-color: #14092A;
 }
 
 body.dark-mode .image-bottom {
@@ -217,17 +225,26 @@ body.dark-mode .image-bottom {
     position: absolute;
     background: white;
     padding: 12px 24px;
-    border-radius: 50px;
+    border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
     z-index: 3;
-    color: #9c27b0;
     border: 1px solid rgba(156, 39, 176, 0.1);
     white-space: nowrap;
+    background: white;
+}
+
+.badge-top span,
+.badge-bottom span {
+    background: linear-gradient(135deg, #FF52AF 0%, #9F53FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 body.dark-mode .badge-top,
@@ -302,14 +319,14 @@ body.dark-mode .instagram {
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
-    color: #2d1b4e;
-    margin: 0;
+    color: #220953;
+    margin: 0 0 20px 0;
     width: 396px;
-    height: 246px;
+    height: auto;
 }
 
 body.dark-mode .instagram h2 {
-    color: #ffffff;
+    color: #D1C0F1;
 }
 
 .hashtag {
@@ -317,7 +334,7 @@ body.dark-mode .instagram h2 {
     font-size: 64px;
     font-weight: 400;
     color: #FF52AF;
-    margin: -40px 0 0 0;
+    margin: 0 0 30px 0;
     display: block;
 }
 
@@ -373,6 +390,13 @@ body.dark-mode .instagram h2 {
     right: 171px;
     transform: rotate(-15deg);
     border: 10px solid #E5D9FD;
+}
+
+body.dark-mode .photo-top-left,
+body.dark-mode .photo-top-right,
+body.dark-mode .photo-bottom-left,
+body.dark-mode .photo-bottom-right {
+    border-color: #372A51;
 }
 
 .instagram-item:hover {
@@ -457,20 +481,26 @@ body.dark-mode .newsletter {
 .newsletter-form {
     display: flex;
     gap: 15px;
-    max-width: 550px;
+    max-width: 600px;
     margin: 0 auto;
     position: relative;
 }
 
 .newsletter-form input {
-    width: 528px;
+    flex: 1;
     height: 72px;
-    padding: 18px 30px;
+    padding: 18px 180px 18px 30px;
     border: none;
     border-radius: 48px;
     font-size: 16px;
     outline: none;
     background-color: #FFFFFF;
+    color: #333;
+}
+
+.newsletter-form input::placeholder {
+    color: #999;
+    opacity: 1;
 }
 
 .newsletter-form button {
@@ -491,6 +521,10 @@ body.dark-mode .newsletter {
     justify-content: center;
     gap: 4px;
     box-shadow: 0 4px 12px rgba(91, 10, 255, 0.25);
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .newsletter-form button:hover {
@@ -542,17 +576,7 @@ body.dark-mode footer {
     background-clip: text;
 }
 
-.footer-col-yoga p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.2; /* Texto más compacto */
-    width: 244px;
-    margin: 0 auto;  /* Centrado y sin exagerar márgenes */
-    opacity: 0.8;
-    color: #A197B4;
-}
-
+/* ESTA REGLA SE APLICA A TODOS LOS <p> DEL FOOTER (MENOS YOGA) */
 .footer-col p {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -572,6 +596,26 @@ body.dark-mode footer {
 
 .footer-col-contact {
     text-align: center;   
+}
+
+/* ESTA VA **DESPUÉS** para que NO sea sobrescrita */
+.footer-col-yoga p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;      /* texto más compacto */
+    width: 244px;
+    margin: 0 auto;        /* centrado */
+    opacity: 0.8;
+    color: #A197B4;
+}
+
+.footer-bottom {
+    border-top: 1px solid #A197B4;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer-bottom {
