@@ -15,6 +15,7 @@ body{
 :root{
     --variable-color: linear-gradient(45deg,#f552b8, #f660bc, #d252d5, #c961e1, #a153fd);
     --color-font-light: #220953;
+    --color-font-dark: #d1c0f1;
 }
 
 /* Movil page 376 px light*/
@@ -23,7 +24,9 @@ body{
 /* Javier Start */
 
 /* Header Section */
+
 header nav{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,11 +45,16 @@ header nav h2{
     background-clip: text;
 }
 
+.hover-nav{
+    display: none;
+}
+
 header nav .moon-menu{
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+
 }
 
 .dark-checkbox-div{
@@ -89,15 +97,37 @@ header nav .moon-menu{
     position: relative;
 }
 
+menu-mobil-toggle{
+    position: absolute;
+}
+
+.menu-mobil-toggle input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+
+}
+
 .menu-light{
     position: absolute;
-
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
     cursor: pointer;
 }
 
 .menu-dark{
     opacity: 0;
     cursor: pointer;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
 }
 
 
@@ -105,11 +135,82 @@ header nav .moon-menu{
     display: none;
 }
 
+
 header nav div a img{
     width: 25px;
     vertical-align: middle;
 }
 
+#menu ul li a.current{
+    background-image: var(--variable-color);
+    color: transparent;
+    background-clip: text;
+}
+/* Toggle Menu Movil */
+
+@media (max-width: 1440px) {
+body:has(#display-menu-mobil:checked) #menu{
+    position: absolute;
+    display: block;
+    z-index: 100;
+    /* background-color: white; */
+    height: 100vh;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    padding: 0 20px;
+    margin-top: -50px;
+}
+
+body:has(#display-menu-mobil:checked) #menu .inside-toggle{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #ededed;
+    padding: 30px 30px 0 50px;
+}
+
+body:has(#display-menu-mobil:checked){
+    overflow: hidden;
+}
+
+body:has(#display-menu-mobil:checked) #menu .inside-toggle .close-toggle{
+    align-self: flex-end;
+    height: auto;
+    margin-bottom: 30px
+}
+
+body:has(#display-menu-mobil:checked) #menu .inside-toggle .menu-togle-mobil{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    list-style: none;
+}
+
+body:has(#display-menu-mobil:checked) .inside-toggle .menu-togle-mobil li a{
+    text-decoration: none;
+    color: var(--color-font-light);
+    font-size: 22px;
+    font-weight: 500;
+}
+
+body:has(#display-menu-mobil:checked) .inside-toggle .menu-togle-mobil li .current{
+    background-image: var(--variable-color);
+    color: transparent;
+    background-clip: text;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.pointer svg{
+    width: 30px;
+}
+}
 /* Main */
 
 main img{
@@ -205,6 +306,10 @@ main .first-button button{
     border: none;
 }
 
+main .first-button button:hover{
+    cursor: pointer;
+}
+
 main .yoga-classes-participants div p{
     color: var(--color-font-light);
     font-weight: 400;
@@ -270,7 +375,11 @@ main .number-01-main{
 
 main .number-01-main img{
     width: 50vw;
-}   
+}
+main .dark-girl-doing{
+    display: none;
+    
+}
 
 main .text-get-influencers{
     display: flex;
@@ -300,7 +409,7 @@ main .text-get-influencers{
 .p-text-influ{
     margin: 0;
     font-size: 20px;
-    color: #3b3450;
+    /* color: var(--color-font-light); */
     line-height: 1.4;
     align-self: flex-end;
     text-align: center;
@@ -320,8 +429,7 @@ main .next-button-decorated{
 main .next-button-decorated img{
     position: absolute;
     z-index: -1;
-    width: 150px;
-    
+    width: 190px;
     justify-self: center;
     align-self: center;
     margin: 0;
@@ -337,7 +445,8 @@ main .next-button-decorated button{
     justify-content: center;
     width: fit-content;
     border: none;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 500;
     z-index: 2;
     position: relative;
     justify-self: center;
@@ -345,17 +454,167 @@ main .next-button-decorated button{
 }
 
 main .next-button-decorated button svg{
-    width: 20px;
-    height: 30px;
+    width: 25px;
+    height: 35px;
+    align-content: center;
     fill: url(#gradiente-complejo-45deg);
     margin-left: 5px;
 }
 
 main .next-button-decorated button:hover{
     cursor: pointer;
-    text-decoration: underline;
 }
 
+main .grid-1440px-third{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+main .grid-1440px-third .title-third-section{
+    margin-top: 60px;
+}
+
+main .grid-1440px-third h2{
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--color-font-light);
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Lora;
+}
+
+
+main .grid-1440px-third p{
+    font-size: 20px;
+    text-align: center;
+    padding: 0 20px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.button-third-section{
+    display: flex;
+    justify-content: center;
+}
+
+main .grid-1440px-third .button-third-section button{
+    font-size: 20px;
+    padding: 17px 40px;
+    border-radius: 35px;
+    background-image: var(--variable-color);
+    border: none;
+    color: white;
+}
+
+button svg{
+    width: 30px;
+    fill: white;
+    vertical-align:middle;
+}
+main .button-third-section button:hover{
+    cursor: pointer;
+}
+.last-section{
+    display: flex;
+    margin: 30px 20px;
+}
+
+main .workout-man{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+}
+
+
+main .workout-man .img-man img{
+    width: 100%;
+}
+
+main .workout-man .container-heart-rate{
+    position: absolute;
+    background-color: white;
+    display: flex;
+    width: fit-content;
+    height: 70px;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 20px;
+    justify-self: flex-end;
+    margin-top: 100px;
+}
+
+.heart-style-back{
+    background-color: #ffe6e5;
+    width: fit-content;
+    height: 40px;
+    border-radius: 30px;
+    padding: 5px;
+    align-self: center;
+}
+
+main .workout-man .container-heart-rate img{
+    margin: 0;
+    width: 30px;
+}
+
+main .workout-man .container-heart-rate p{
+    font-size: 18px;
+    margin: 0;
+    text-align: left;
+}
+
+.p-flex-heart{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+}
+
+.heart-style-p2 p{
+    background-image: var(--variable-color);
+    color: transparent;
+    background-clip: text;
+    font-weight: 400;
+}
+
+.heart-style-p1 p{
+    color: var(--color-font-light);
+    font-weight: 500;
+}
+
+.workout-man div.container-courses{
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 180px;
+    justify-self: center;
+    align-self: flex-end;
+    border-radius: 20px;
+    margin-top: 300px;
+    padding: 5px 2px;
+}
+
+.grid-1440px-third section .container-courses p{
+    margin: 0;
+    text-align: start;
+}
+
+.container-courses .courses-mas{
+    background-image: var(--variable-color);
+    color: transparent;
+    background-clip: text;
+    font-weight: 400;
+}
+
+.container-courses .courses-free{
+    color: var(--color-font-light);
+    font-weight: 500;
+}
 
 /* Javier End */
 
@@ -370,39 +629,88 @@ main .next-button-decorated button:hover{
 
 
 /* Movil Page 376 px dark */
-body:has(input:checked){
+@media (max-width: 1439px) {
+    body:has(#dark-page:checked) #menu .inside-toggle{
+        background-color: #a8a8a8;
+    }
+}
+body:has(#dark-page:checked){
     background-color: #14092a;
     --color-font-light: #d1c0f1;
+    color: var(--color-font-dark);
 }
 
-body:has(input:checked) .moon-design{
+body:has(#dark-page:checked) .hover-nav{
+    background-color: #d1c0f1;
+}
+
+
+body:has(#dark-page:checked) .moon-design{
     display: none;
 }
-body:has(input:checked) .sun-design{
+body:has(#dark-page:checked) .sun-design{
     display: block;
 }
 
-body:has(input:checked) .menu-light{
+body:has(#dark-page:checked) .menu-light{
     opacity: 0;
 }
-body:has(input:checked) .menu-dark{
+body:has(#dark-page:checked) .menu-dark{
     opacity: 1;
+}
+
+body:has(#dark-page:checked) #menu ul li a.current{
+    background-image: var(--variable-color);
+    color: transparent;
+    background-clip: text;
+}
+
+body:has(#dark-page:checked) .light-girl-doing{
+    display: none;  
+}
+
+body:has(#dark-page:checked) .dark-girl-doing{
+    display: block;  
+}
+
+body:has(#dark-page:checked) #menu ul li a{
+    color: var(--color-font-dark);
+}
+
+body:has(#dark-page:checked) .container-courses{
+    background-color: #372a51;
+}
+
+body:has(#dark-page:checked) .container-heart-rate{
+    background-color: #372a51;
 }
 
 /* Desktop Page 1440 px light */
 @media (min-width: 1440px) {
+    body:has(#dark-page:checked) header nav{
+        box-shadow: 5px 1px 6px rgba(0, 0, 0, 0.5);
+
+    }
     header nav{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-around;
         padding: 0;
-        height: 4rem;
-        margin: 15px 0;
+        height: 5rem;
+        padding: 15px 0;
+        gap: 300px;
     }
 
     header nav h2{
         font-size: 24px;
+    }
+
+    .header-right{
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+        position: relative;
     }
 
     header nav .moon-menu .menus-dark-light{
@@ -418,14 +726,20 @@ body:has(input:checked) .menu-dark{
     header nav #menu ul li a{
         font-size: 18px;
         font-weight: 500;
+        color: var(--color-font-light);
     }
 
-    /* header nav .moon-menu .dark-checkbox-div{
-        order: 2;
-    } */
+    .inside-toggle{
+        background-color: transparent;
+    }
+
     #menu{
         order: 1;
         display: flex;
+    }
+
+    .close-toggle{
+        display: none;
     }
 
     #menu ul{
@@ -439,6 +753,47 @@ body:has(input:checked) .menu-dark{
     #menu ul li a{
         text-decoration: none;
     }
+
+    .hover-nav{
+        display: flex;   
+        position: absolute;
+        top: 200%;
+        width: 100%;
+        height: fit-content;
+        background-color: white;
+        border-radius: 8px;
+        visibility: hidden; 
+        opacity: 0;
+        z-index: 10;
+    }
+
+    header:has(#menu .hover-header:hover, .hover-nav:hover, .hover-header:focus) .hover-nav{
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .hover-nav ul li a:hover {
+        background-image: var(--variable-color);
+        color: transparent;
+        background-clip: text;
+    }
+
+    .layout-hover-header{
+        display: flex;
+        flex-direction: row;
+        margin-left: 8rem;
+        gap: 4rem;
+    }
+
+    .hover-nav .layout-hover-header div ul{
+        list-style: none;
+    }
+
+    .hover-nav .layout-hover-header div ul li a{
+        text-decoration: none;
+    }
+
+    
 
     main div.grid-1440px-first{
         display: grid;
@@ -552,6 +907,8 @@ body:has(input:checked) .menu-dark{
         height: 100%;
     }
 
+
+
     main div.grid-1440px-second{
         display: grid;
         grid-template-columns: auto  2fr 1fr;
@@ -593,6 +950,37 @@ body:has(input:checked) .menu-dark{
         justify-self: center;
         width: 150px;
         height: 150px;
+    }
+
+    main .workout-man{
+        width: 30vw;
+    }
+
+    main .grid-1440px-third{
+        display: flex;
+        flex-direction: row;
+        margin: 5rem 10rem;
+    }
+
+    main .grid-1440px-third .last-section{
+        order: 1;
+    }
+
+    main .grid-1440px-third .title-section-bring{
+        order: 2;
+    }
+
+    main .grid-1440px-third h2{
+        font-size: 4rem;
+        text-align: left;
+    }
+
+    main .grid-1440px-third p{
+        text-align: left;
+    }
+
+    .button-third-section{
+        justify-content: flex-start;
     }
 
     
