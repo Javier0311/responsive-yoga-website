@@ -13,40 +13,86 @@
     <!-- Javier start -->
     
     <header>
-        <nav aria-label="Primary Navegation">
+        <nav aria-label="Primary Navegation">  
             <h2>Yoga</h2>
-
-            <div class="moon-menu">
-
-                <div class="dark-checkbox-div">
-                    <label class="checkbox-dark-container">
-                        <input type="checkbox" id="dark-page">
-                        <span class="moon-design">
-                          <img src="./images/moon-light.png" alt="moon icon">
-                        </span>
-                        <span class="sun-design">
-                            <img src="./images/sun-dark.png" alt="sun icon">
-                        </span>
-                    </label>
-                </div>
-
-                <div class="menus-dark-light">
-                    <div class="menu-light">
-                        <a href="#"><img src="./images/menu-light.png" alt="menu"></a>
+            <div class="header-right">
+                <div class="moon-menu">
+                    
+                    <div class="dark-checkbox-div">
+                        <label class="checkbox-dark-container">
+                            <input type="checkbox" id="dark-page">
+                            <span class="moon-design">
+                            <img src="./images/moon-light.png" alt="moon icon">
+                            </span>
+                            <span class="sun-design">
+                                <img src="./images/sun-dark.png" alt="sun icon">
+                            </span>
+                        </label>
                     </div>
-                    <div class="menu-dark">
-                        <a href="#"><img src="./images/menu-dark.png" alt="menu"></a>
+
+                    <div class="menus-dark-light">
+                        <label class="menu-mobil-toggle" for="display-menu-mobil">
+                            <input type="checkbox" id="display-menu-mobil">
+                            <div class="menu-light">
+                                <img src="./images/menu-light.png" alt="menu">
+                            </div>
+                            <div class="menu-dark">
+                                <img src="./images/menu-dark.png" alt="menu">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            
+                <div id="menu">
+                    <div class="inside-toggle">
+                        <div class="close-toggle">
+                            <label class="buttom-close-toggle" for="display-menu-mobil">
+                                <span class="pointer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg></span>
+                            </label>
+                        </div>
+                        <ul class="menu-togle-mobil">
+                            <li><a href="#" class="current">Home</a></li>
+                            <li><a href="#" class="hover-header">Health</a></li>
+                            <li><a href="#" class="hover-header">Place</a></li>
+                            <li><a href="#" class="hover-header">Follow</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hover-nav">
+                    <div class="layout-hover-header">
+                        <div class="health-hover">
+                            <ul>
+                                <li><a href="#">Option 1</a></li>
+                                <li><a href="#">Option 2</a></li>
+                                <li><a href="#">Option 3</a></li>
+                                <li><a href="#">Option 4</a></li>
+                                <li><a href="#">Option 5</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="place-hover">
+                            <ul>
+                                <li><a href="#">Option 1</a></li>
+                                <li><a href="#">Option 2</a></li>
+                                <li><a href="#">Option 3</a></li>
+                                <li><a href="#">Option 4</a></li>
+                                <li><a href="#">Option 5</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="follow-hover">
+                            <ul>
+                                <li><a href="#">Option 1</a></li>
+                                <li><a href="#">Option 2</a></li>
+                                <li><a href="#">Option 3</a></li>
+                                <li><a href="#">Option 4</a></li>
+                                <li><a href="#">Option 5</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="menu">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Health</a></li>
-                        <li><a href="#">Place</a></li>
-                        <li><a href="#">Follow</a></li>
-                    </ul>
-                </div>
+
         </nav>
     </header>
 
@@ -85,13 +131,15 @@
 
             <div class="img-from-class">
                 <img src="./images/image-1.png" alt="A girl doing yoga pose">
+
             </div>
         </div>
 
         <div class="grid-1440px-second">
             <div class="number-01-main">
                 <p>#01</p>
-                <img src="./images/image-2-main.png" alt="A girl doing yoga pose with her toe held by her hand">
+                <img src="./images/image-2-main.png" alt="A girl doing yoga pose with her toe held by her hand" class="light-girl-doing">
+                <img src="./images/image-2-main-dark.png" alt="A girl doing yoga dark" class="dark-girl-doing">
             </div>
 
             <div class="text-get-influencers">
@@ -113,6 +161,63 @@
                     </linearGradient>
                     </defs><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></button>
             </div>
+        </div>
+
+        <div class="grid-1440px-third">
+
+            <div class="title-section-bring">
+                <div class="title-third-section">
+                    <h2>Bring Happiness To Good Health!</h2>
+                </div>
+
+                <div class="p-third-section">
+                    <p>If you take care of your good health, take care of your mentality and lead a healthy life with positive thoughts every day.</p>
+                </div>
+
+                <div class="button-third-section">
+                    <button>Let's Start <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--> <defs>
+                        <linearGradient id="gradiente-complejo-45deg" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#f552b8" />
+                        <stop offset="25%" stop-color="#f660bc" />
+                        <stop offset="50%" stop-color="#d252d5" />
+                        <stop offset="75%" stop-color="#c961e1" />
+                        <stop offset="100%" stop-color="#a153fd" />
+                        </linearGradient>
+                        </defs><path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z"/></svg></button>
+                </div>
+            </div>
+            <section class="last-section">
+                <div class="workout-man">
+                    <div class="img-man">
+                        <img src="./images/health-fitness.png" alt="man jumping">
+                    </div>
+
+                    <div class="container-heart-rate">
+                        <div class="heart-style-back">
+                            <img src="./images/ri_heart-3-fill.png" alt="heart icon">
+                        </div>
+
+                        <div class="p-flex-heart">
+                            <div class="heart-style-p1">
+                                <p>Heart Rate</p>
+                            </div>
+
+                            <div class="heart-style-p2">
+                                <p>168 bpm</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-courses">
+                        <div class="courses-mas">
+                            <p>500+</p>
+                        </div>
+                        <div class="courses-free">
+                            <p>Free Courses</p>
+                        </div>
+                    </div>
+                </div>  
+            </section>
         </div>
 
     </main>
