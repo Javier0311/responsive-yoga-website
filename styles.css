@@ -93,6 +93,15 @@ body.dark-mode .theme-toggle .moon {
     color: #220953;
 }
 
+/* Mostrar título desktop, ocultar móvil */
+.title-desktop {
+    display: block;
+}
+
+.title-mobile {
+    display: none;
+}
+
 body.dark-mode .hero h1 {
     color: #D1C0F1;
 }
@@ -136,6 +145,15 @@ body.dark-mode .hero p {
 
 .cta-button span {
     font-size: 20px;
+}
+
+/* Responsive breaks */
+.break-mobile {
+    display: none;
+}
+
+.break-desktop {
+    display: inline;
 }
 
 /* Hero Images */
@@ -1052,11 +1070,30 @@ body.dark-mode footer {
     
     .hero h1 {
         font-family: 'Lora', serif;
-        font-size: 36px;
-        line-height: 110%;
+        font-size: 28px;
+        line-height: 100%;
         margin-bottom: 20px;
-        color: #1a1a1a;
+        color: #220953;
         font-weight: 400;
+        letter-spacing: -0.8px;
+    }
+    
+    /* Ocultar título desktop, mostrar móvil */
+    .title-desktop {
+        display: none;
+    }
+    
+    .title-mobile {
+        display: block;
+    }
+    
+    /* Mostrar break móvil, ocultar break desktop */
+    .break-mobile {
+        display: inline;
+    }
+    
+    .break-desktop {
+        display: none;
     }
     
     body.dark-mode .hero h1 {
@@ -1307,8 +1344,8 @@ body.dark-mode footer {
     .photo-top-left,
     .photo-top-right {
         position: absolute;
-        width: 180px;
-        height: 260px;
+        width: 140px;
+        height: 210px;
         border: 8px solid #E5D9FD;
         margin: 0;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -1316,8 +1353,8 @@ body.dark-mode footer {
     }
     
     .photo-top-left {
-        top: 0px;
-        left: 10px;
+        top: 50px;
+        left: 20px;
         transform: rotate(-5deg);
     }
     
