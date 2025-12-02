@@ -36,3 +36,8 @@ Modern, clean UI
 Smooth section flow and balanced visual structure
 
 Typography and spacing optimized for readability
+
+## 👥 Development Team
+**Javier** Reproduced (the header, navigation, and the main content with the three "grid-1440px-*" sections)
+
+**David** Reproduced (the theme toggle button, the hero section, Instagram section, newsletter, footer and the theme script)
